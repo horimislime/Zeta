@@ -1,8 +1,8 @@
 {
   "name": "zenhub-app",
-  "productName": "ZenhubApp",
-  "version": "0.0.0",
-  "description": "My finest app",
+  "productName": "Zeta",
+  "version": "0.0.1",
+  "description": "An Electron app for ZenHub users",
   "license": "MIT",
   "repository": "horimislime/zenhub-app",
   "author": {
@@ -13,7 +13,9 @@
   "scripts": {
     "test": "xo",
     "start": "electron .",
-    "build": "electron-packager . --out=dist --asar --overwrite --all"
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -mwl"
   },
   "files": [
     "index.js",
@@ -30,8 +32,10 @@
   },
   "devDependencies": {
     "devtron": "^1.4.0",
-    "electron-packager": "^8.0.0",
-    "electron": "^1.3.3",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.22.1",
+    "electron-builder-squirrel-windows": "^19.23.0",
+    "electron-connect": "^0.6.2",
     "xo": "^0.16.0"
   },
   "xo": {
@@ -40,5 +44,41 @@
       "node",
       "browser"
     ]
+  },
+  "electronVersion": "1.7.5",
+  "build": {
+    "appId": "me.horimisli.zeta",
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "static/app.icns",
+      "target": [
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "icon": "static/app.ico",
+      "target": [
+        "zip"
+      ]
+    }
   }
 }
