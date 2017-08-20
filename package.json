@@ -45,6 +45,10 @@
   "build": {
     "appId": "me.horimisli.zeta",
     "asar": true,
+    "files": [
+      "**/*",
+      "!asset/*"
+    ],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "static/app.icns",
