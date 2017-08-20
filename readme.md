@@ -1,28 +1,16 @@
-# zenhub-app
+# Zeta
 
-> My finest app
+This application wraps ZenHub web app using Electron.
 
+# Install
+You can download and install latest build from [GitHub Releases](https://github.com/horimislime/Zeta/releases).
 
-## Dev
+# Build
 
 ```
 $ npm install
+$ npm dist
 ```
-
-### Run
-
-```
-$ npm start
-```
-
-### Build
-
-```
-$ npm run build
-```
-
-Builds the app for macOS, Linux, and Windows, using [electron-packager](https://github.com/electron-userland/electron-packager).
-
 
 ## License
 
